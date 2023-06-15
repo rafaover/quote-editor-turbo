@@ -6,3 +6,4 @@
 - SASS
 - PortgreSQL
 - Github Actions:CI (Test+Lint)
+- Capybara (Testing)
