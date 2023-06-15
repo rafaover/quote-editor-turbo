@@ -56,7 +56,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 # Rubocop for lint
-gem 'rubocop', require: false
+gem 'rubocop', '~> 1.52', require: false
 gem 'rubocop-rails', '~> 2.19', '>= 2.19.1'
 
 # # Code checking for testing. Capybara test files (RSpec, Cucumber, Minitest).
