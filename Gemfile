@@ -55,6 +55,10 @@ gem 'bootsnap', require: false
 
 # Rubocop for lint
 gem 'rubocop', require: false
+gem 'rubocop-rails', '~> 2.19', '>= 2.19.1'
+
+# # Code checking for testing. Capybara test files (RSpec, Cucumber, Minitest).
+# gem 'rubocop-capybara', '~> 2.18'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
