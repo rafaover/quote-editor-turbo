@@ -44,4 +44,4 @@ jobs:
           bundler-cache: true
       - run: bundle install
       - name: Rubocop Lint
-        run: rubocop --parallel
+        run: rubocop
