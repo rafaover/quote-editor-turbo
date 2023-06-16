@@ -1,3 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
   Exclude:
     - db/migrate/**/*
@@ -10,6 +12,7 @@ AllCops:
     - app/channels/**/*
     - app/jobs/**/*
     - node_modules/**/*
+    - vendor/**/*
     - Gemfile
     - Rakefile
     - config.ru

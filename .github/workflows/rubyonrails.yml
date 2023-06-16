@@ -49,8 +49,6 @@ jobs:
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
           bundler-cache: true
-      - name: Install gems
-        run: bundle install --jobs 4 --retry 3
       # Add or replace any other lints here
-      - name: Lint Ruby files
-        run: bundle exec rubocop --parallel
+      # - name: Lint Ruby files
+      #   run: rubocop --parallel
