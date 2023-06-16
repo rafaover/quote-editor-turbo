@@ -44,7 +44,7 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: 3.1.2
-      - run: sudo bundle install
+      - run: bundle install
       # Add or replace any other lints here
       - name: Rubocop Lint
         run: rubocop --parallel
