@@ -2,6 +2,8 @@ name: "Ruby on Rails CI"
 on:
   push:
     branches: ["master"]
+    paths-ignore:
+      - "**.md" # Exclude markdown files from triggering the workflow
   pull_request:
     branches: ["master"]
 jobs:
@@ -33,6 +35,29 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rails test:system
+      # check test results
+      - name: Check test results
+        id: test-results
+        run: |
+          if [[ -n $(grep -i "fail" test_results.xml) ]]; then
+            echo "::set-output name=tests_passed::false"
+          else
+            echo "::set-output name=tests_passed::true"
+          fi
+      # Cancel the push if fails
+      - name: Fail if tests failed
+        run: |
+          if [[ "${{ steps.test-results.outputs.tests_passed }}" == "false" ]]; then
+            echo "Tests failed. Exiting with a non-zero status."
+            exit 1
+          fi
+      # execute the merge if test passes
+      - name: Merge push
+        if: ${{ github.event_name == 'push' && success() }}
+        run: |
+          git checkout master
+          git merge "${{ github.ref }}"
+          git push
 
   lint:
     runs-on: ubuntu-latest
