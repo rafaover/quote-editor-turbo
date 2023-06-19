@@ -3,7 +3,7 @@ require "application_system_test_case"
 class QuotesTest < ApplicationSystemTestCase
   setup do
     # first fixture quote
-    @quote = quotes(:first)
+    @quote = Quote.ordered.first
   end
 
   test "Creating a new quote" do
