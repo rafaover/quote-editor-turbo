@@ -4,6 +4,7 @@
 
 - Ruby on Rails
 - Stimulus/Turbo-Rails
+- Action Cable
 - Esbuild
 - PortgreSQL
 - Github Actions:CI (Test+Lint)
