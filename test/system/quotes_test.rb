@@ -2,6 +2,8 @@ require "application_system_test_case"
 
 class QuotesTest < ApplicationSystemTestCase
   setup do
+    # Using login_as method from WARDEN gem
+    login_as users(:accountant)
     # first fixture quote
     @quote = Quote.all.order(created_at: :desc).first
   end
