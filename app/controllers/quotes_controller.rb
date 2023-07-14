@@ -19,6 +19,8 @@ class QuotesController < ApplicationController
     if @quote.save
       respond_to do |format|
         format.html { redirect_to quotes_path, notice: "Quote was successfully created." }
+        # because Turbo Stream responses don't redirect to other locations, so
+        # the flash has to appear on the page right now.
         format.turbo_stream { flash.now[:notice] = "Quote was successfully created." }
       end
     else
