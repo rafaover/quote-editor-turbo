@@ -10,6 +10,7 @@
                 class: "btn btn--primary" %>
   </div>
 
+  <%# Form to replace empty state %>
   <%= turbo_frame_tag Quote.new do %>
     <% if @quotes.none? %>
       <%= render "quotes/empty_state" %>
