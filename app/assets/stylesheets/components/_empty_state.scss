@@ -10,4 +10,16 @@
     margin-bottom: var(--space-l);
     font-weight: bold;
   }
+
+  // we have to use the :only-child pseudo-class in our CSS to show the empty
+  // state when it is the only child of the Turbo Frame with id quotes and
+  // hide it when it is not
+
+  &--only-child {
+    display: none;
+
+    &:only-child {
+      display: revert;
+    }
+  }
 }
